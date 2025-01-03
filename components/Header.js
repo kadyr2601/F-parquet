@@ -34,7 +34,7 @@ function Header() {
 
     useEffect(() => {
         const sections = [
-            document.getElementById('target-id'),
+            document.getElementById('parquet-sanding'),
             document.getElementById('parquet-installation'),
             document.getElementById('parquet-refinishing'),
             document.getElementById('local-restoration'),
@@ -75,8 +75,8 @@ function Header() {
             </div>
             <div className="nav flex gap-5">
                 <Link
-                    href={'#target-id'}
-                      className={activeSection === 'target-id' ? 'active' : ''}
+                    href={'#parquet-sanding'}
+                      className={activeSection === 'parquet-sanding' ? 'active' : ''}
                 >{params.lang == "en" ? "Parquet Sanding & Parquet toning" : "Шлифовка и тонирование паркета"}</Link>
                 <Link
                     href={'#parquet-installation'}

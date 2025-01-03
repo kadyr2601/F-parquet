@@ -1,11 +1,10 @@
 import React from 'react';
 import Image from "next/image";
-import backImage from '@/public/s71.webp'
 
 const Contacts = () => {
     return (
         <div className={'contacts-section'}>
-            <Image alt={'contacs'} src={backImage} fill={true}/>
+            {/*<Image alt={'contacs'} src={backImage} fill={true}/>*/}
 
             <div className={'upper'}>
                 <div className="left">

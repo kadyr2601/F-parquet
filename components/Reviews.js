@@ -3,7 +3,6 @@ import React from 'react';
 import Image from "next/image";
 import banner from '@/public/s61.webp'
 import banner2 from '@/public/s62.webp'
-import review from '@/public/r1.webp'
 import {useParams} from "next/navigation";
 
 

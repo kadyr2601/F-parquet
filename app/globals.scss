@@ -48,6 +48,7 @@ span {
     right: 50px;
 }
 
+
 .header-section {
     padding: 5px 50px;
     z-index: 2;
@@ -66,6 +67,7 @@ span {
         position: relative;
         height: 70px;
         width: 120px;
+        filter: brightness(100);
     }
 
     .nav {
@@ -78,7 +80,7 @@ span {
             padding: 7px 20px;
             border-radius: 10px;
             color: #d6d6d6;
-            font-size: 18px;
+            font-size: 1em;
 
             &:hover {
                 background-color: gray;
@@ -94,8 +96,8 @@ span {
 
     .language {
         a {
-            font-weight: 700;
             color: white;
+            font-size: 1em;
         }
     }
 }
@@ -245,12 +247,14 @@ span {
             border-radius: 10px;
             width: fit-content;
             font-family: "Neue Montreal", sans-serif;
+            font-size: 1.2em;
         }
         p {
             white-space: pre-wrap;
             word-wrap: break-word;
             font-weight: 400;
             margin-left: 50px;
+            font-size: 1em;
 
             @media screen and (max-width: 768px) {
                 margin-left: 0;
@@ -341,6 +345,7 @@ span {
             color: white;
             border-radius: 10px;
             width: fit-content;
+            font-size: 1.2em;
         }
         p {
             color: white;
@@ -349,6 +354,7 @@ span {
             text-wrap: wrap;
             font-weight: 400;
             margin-left: 50px;
+            font-size: 1em;
 
             @media screen and (max-width: 768px) {
                 margin-left: 0;
@@ -436,6 +442,8 @@ span {
             color: white;
             border-radius: 10px;
             width: fit-content;
+            font-size: 1.2em;
+
         }
         p {
             color: white;
@@ -444,6 +452,7 @@ span {
             margin-left: 50px;
             white-space: pre-wrap;
             word-wrap: break-word;
+            font-size: 1em;
 
             @media screen and (max-width: 768px) {
                margin-left: 0;
@@ -539,6 +548,7 @@ span {
             color: white;
             border-radius: 10px;
             width: fit-content;
+            font-size: 1.2em;
         }
         p {
             color: white;
@@ -547,6 +557,7 @@ span {
             margin-left: 50px;
             white-space: pre-wrap;
             word-wrap: break-word;
+            font-size: 1em;
 
             @media screen and (max-width: 768px) {
                 margin-left: 0;
@@ -572,7 +583,7 @@ span {
     }
 
     .image {
-        height: 90vh;
+        height: 80vh;
         width: 35%;
         position: relative;
 
@@ -605,14 +616,14 @@ span {
 
             h1 {
                 text-align: center;
-                font-size: 77.3px;
+                font-size: 3em;
 
                 @media screen and (max-width: 768px) {
                     font-size: 3em;
                 }
             }
             p {
-                font-size: 17.1px;
+                font-size: 1em;
                 white-space: pre-wrap;
                 word-wrap: break-word;
 
@@ -650,7 +661,7 @@ span {
                 span {
                     margin-bottom: 20px;
                     margin-top: 25px;
-                    font-size: 24px;
+                    font-size: 1.2em;
                     font-weight: 700;
 
                     @media screen and (max-width: 768px) {
@@ -661,7 +672,7 @@ span {
 
                 p {
                     margin-bottom: 30px;
-                    font-size: 17px;
+                    font-size: 1em;
                 }
             }
         }
@@ -677,17 +688,17 @@ span {
 
     h1 {
         text-align: center;
-        font-size: 53px;
+        font-size: 3em;
         margin-bottom: 40px;
 
         @media screen and (max-width: 768px) {
-            font-size: 2.5em;
+            font-size: 3em;
         }
     }
 
     .cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 35px;
 
         @media screen and (max-width: 768px) {
@@ -696,7 +707,7 @@ span {
         }
 
         .card {
-            height: 300px;
+            height: 200px;
             position: relative;
             box-shadow: rgb(82, 82, 82) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 
@@ -788,7 +799,7 @@ span {
                 color: white;
                 border-radius: 20px;
                 border: 1px solid #ef5d5d;
-                font-size: 37px;
+                font-size: 1.7em;
                 margin-bottom: 40px;
                 padding: 0 60px;
                 line-height: 45px;
@@ -876,121 +887,145 @@ span {
     }
 }
 
-
-.contacts-section {
-    margin-top: 60px;
+.image-section-2 {
+    height: 80vh;
+    width: 100%;
     position: relative;
-    height: 90vh;
+    margin-top: 60px;
+    margin-bottom: 60px;
 
     @media screen and (max-width: 768px) {
+        height: 300px;
+        display: none;
+    }
+}
+
+.gallery-section {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 30px;
+    color: white;
+
+    h1 {
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 3em;
+        }
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            height: 300px;
+            position: relative;
+            box-shadow: rgb(82, 82, 82) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            border-radius: 5px;
+            @media screen and (max-width: 768px) {
+                height: 180px;
+            }
+
+            img {
+                border-radius: 5px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.contacts-btn {
+    @media screen and (max-width: 678px){
         display: none;
     }
 
-    img {
-        object-fit: cover;
+    .disable {
+        display: none;
     }
 
-    .upper {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+    .not-open {
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        background-color: white;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        cursor: pointer;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        z-index: 2;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
 
-        .left {
-            width: 30%;
-            .bg1 {
-                background-color: rgba(115, 115, 115, 0.73);
-                height: 80vh;
-                width: 200px;
-                z-index: 2;
-                position: absolute;
-                left: 0;
-                top: 5vh;
-            }
-
-            .bg2 {
-                border-top: 1px solid #ef5d5d;
-                border-bottom: 1px solid #ef5d5d;
-                border-right: 1px solid #ef5d5d;
-                z-index: 3;
-                height: 70vh;
-                left: 0;
-                top: 10vh;
-                width: 240px;
-                position: absolute;
-            }
+        span {
+            color: #1a1a1b;
+            font-size: 0.8em;
+            font-weight: 600;
         }
+    }
 
-        .right {
+    .open {
+        background-color: white;
+        position: fixed;
+        bottom: 5%;
+        right: 2px;
+        height: 220px;
+        width: 250px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+        z-index: 999;
+
+        .contacts {
             display: flex;
             flex-direction: column;
-            width: 70%;
-            margin-top: 5vh;
-            justify-content: space-between;
+            gap: 15px;
 
-            .up {
-                display: flex;
-                flex-direction: row;
-                gap: 50px;
+            a {
+                background-color: #363636;
+                color: white;
+                border-radius: 5px;
+                padding: 5px;
+                text-align: center;
 
-                .column {
-                    background: linear-gradient(to right, rgba(0, 0, 0, 0.52), rgba(115, 115, 115, 0.53));
-                    display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 25px;
-                    height: 250px;
-                    width: 350px;
-
-                    h1 {
-                        color: white;
-                        font-weight: 700;
-                        font-size: 25px;
-                    }
-
-                    span {
-                        font-weight: 400;
-                        font-size: 25px;
-                    }
+                &:hover {
+                    background-color: rgba(54, 54, 54, 0.4);
                 }
-            }
-
-            .down {
-                background: linear-gradient(to right, rgba(0, 0, 0, 0.52), rgba(115, 115, 115, 0.53));
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                align-items: center;
-                justify-content: center;
-                padding: 25px;
-                height: 250px;
-                width: 750px;
-                margin-bottom: 5vh;
-
-                h1 {
-                    color: white;
-                    font-weight: 700;
-                    font-size: 25px;
-                }
-
-                .row {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    color: white;
-                    width: 100%;
-
-                    .col {
-                        text-align: center;
-                    }
-                }
-
             }
         }
+
+        .close {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            align-self: flex-end;
+            font-size: 1em;
+            border-radius: 10px;
+            background-color: #1c1d22;
+            color: white;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(54, 54, 54, 0.4);
+            }
+
+        }
+
     }
+
+
 }
 

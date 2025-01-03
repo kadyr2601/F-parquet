@@ -9,7 +9,7 @@ const ParquetSanding = ({props}) => {
     const params = useParams();
 
     return (
-        <div className={'section-2'} id="target-id">
+        <div className={'section-2'} id="parquet-sanding">
             <div className={'images'}>
                 <div className={'image'}>
                     <Image alt={'san1'} src={process.env.API_URL + props.image_left} fill={true}/>
