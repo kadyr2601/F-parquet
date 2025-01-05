@@ -23,6 +23,9 @@ function MainBanner({banner}) {
                     <Image src={logo} alt={'main-banner'} fill={true}/>
                 </div>
                 <div className={'down'} onClick={scrollToTarget}>
+                    <div className="down-btn">
+                        &darr;
+                    </div>
                    Learn more
                </div>
             </div>

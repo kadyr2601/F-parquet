@@ -10,7 +10,7 @@ const nextConfig = {
                 // pathname: '/media/**',
 
                 protocol: 'https',
-                hostname: 'fixworks-paquet.com',
+                hostname: 'fixworks-parquet.com',
                 port: '',
                 pathname: '/media/**',
             },
@@ -18,8 +18,8 @@ const nextConfig = {
     },
     env: {
         // API_URL: "http://127.0.0.1:8000",
-        HostName: "https://fixworks-paquet.com",
-        API_URL: "https://fixworks-paquet.com",
+        HostName: "https://fixworks-parquet.com",
+        API_URL: "https://fixworks-parquet.com",
     },
 }
 

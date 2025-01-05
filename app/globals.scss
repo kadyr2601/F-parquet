@@ -135,12 +135,12 @@ span {
         }
 
         .logo-centre {
-            height: 100px;
-            width: 700px;
+            height: 80px;
+            width: 600px;
             position: relative;
             align-self: center;
             margin: auto 0;
-            transform: translateY(100px);
+            transform: translateY(140px);
 
             @media screen and (max-width: 768px) {
                 width: 90%;
@@ -154,7 +154,25 @@ span {
             margin-bottom: 50px;
             padding-left: 50px;
             cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+
+            .down-btn {
+                position: relative;
+                color: #ef5d5d;
+                border-radius: 50%;
+                border: 1px solid #ef5d5d;
+                padding: 15px;
+                height: 20px;
+                width: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
+
     }
 
     video {
@@ -168,6 +186,16 @@ span {
     }
 }
 
+
+.modal-img {
+    position: relative;
+    height: 80vh;
+    width: 80vw;
+
+    img {
+        object-fit: cover;
+    }
+}
 
 .section-2 {
     padding: 60px 30px;
@@ -895,8 +923,7 @@ span {
     margin-bottom: 60px;
 
     @media screen and (max-width: 768px) {
-        height: 300px;
-        display: none;
+        height: 260px;
     }
 }
 
@@ -974,7 +1001,9 @@ span {
     }
 
     .open {
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         position: fixed;
         bottom: 5%;
         right: 2px;
