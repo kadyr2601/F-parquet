@@ -3,6 +3,7 @@ import React from 'react';
 import Image from "next/image";
 import Button from "@/components/Button";
 import {useParams} from "next/navigation";
+import Link from "next/link";
 
 const ParquetInstallation = ({props}) => {
     const params = useParams();
@@ -15,7 +16,7 @@ const ParquetInstallation = ({props}) => {
                 </div>
                 <div className={'image'}>
                     <Image alt={'san1'} src={process.env.API_URL + props.image_right} fill={true}/>
-                    <Button title={"Find out the price"}/>
+                    <Link className={'btn'} href={`${params.lang}/parquet-installation`}>{params.lang == 'en' ? "Find out the price" : "Узнать цену"}</Link>
                 </div>
             </div>
             <div className="text-banner">
