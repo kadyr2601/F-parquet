@@ -1275,4 +1275,91 @@ span {
 }
 
 
+.local-restoration {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    height: 100vh;
+    position: relative;
+
+    .background-img {
+        width: 100%;
+        height: 100%;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        height: 100%;
+    }
+
+    .up {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        .left {
+            width: 60%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+
+            p {
+                background-color: rgba(28, 29, 34, 0.55);
+                padding: 20px;
+                border-radius: 10px;
+                white-space: pre-wrap;
+                line-height: 1.5em;
+                color: white;
+            }
+        }
+
+        .right {
+            width: 40%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+
+            @media screen and (max-width: 768px) {
+                grid-template-columns: repeat(1, 1fr);
+                width: 100%;
+            }
+
+            .image {
+                position: relative;
+                height: 350px;
+
+                img {
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .down {
+        align-self: center;
+        background-color: #363636;
+        border-radius: 10px;
+        color: white;
+        font-size: 1em;
+        padding: 7px 14px;
+        margin-top: 30px;
+        cursor: pointer;
+        z-index: 1;
+    }
+}
+
+
 

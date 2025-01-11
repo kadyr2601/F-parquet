@@ -32,40 +32,40 @@ function Header() {
 
     const [activeSection, setActiveSection] = useState('');
 
-    useEffect(() => {
-        const sections = [
-            document.getElementById('parquet-sanding'),
-            document.getElementById('parquet-installation'),
-            document.getElementById('parquet-refinishing'),
-            document.getElementById('local-restoration'),
-        ];
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const visibleSections = entries
-                    .filter((entry) => entry.isIntersecting)
-                    .map((entry) => entry.target.id);
-
-                // Update the active section or clear it if none of the observed sections are visible
-                if (visibleSections.length > 0) {
-                    setActiveSection(visibleSections[0]); // Use the first visible section
-                } else {
-                    setActiveSection(''); // No observed section is in view
-                }
-            },
-            { threshold: 0.5 } // Trigger when 50% of the section is visible
-        );
-
-        sections.forEach((section) => {
-            if (section) observer.observe(section);
-        });
-
-        return () => {
-            sections.forEach((section) => {
-                if (section) observer.unobserve(section);
-            });
-        };
-    }, []);
+    // useEffect(() => {
+    //     const sections = [
+    //         document.getElementById('parquet-sanding'),
+    //         document.getElementById('parquet-installation'),
+    //         document.getElementById('parquet-refinishing'),
+    //         document.getElementById('local-restoration'),
+    //     ];
+    //
+    //     const observer = new IntersectionObserver(
+    //         (entries) => {
+    //             const visibleSections = entries
+    //                 .filter((entry) => entry.isIntersecting)
+    //                 .map((entry) => entry.target.id);
+    //
+    //             // Update the active section or clear it if none of the observed sections are visible
+    //             if (visibleSections.length > 0) {
+    //                 setActiveSection(visibleSections[0]); // Use the first visible section
+    //             } else {
+    //                 setActiveSection(''); // No observed section is in view
+    //             }
+    //         },
+    //         { threshold: 0.5 } // Trigger when 50% of the section is visible
+    //     );
+    //
+    //     sections.forEach((section) => {
+    //         if (section) observer.observe(section);
+    //     });
+    //
+    //     return () => {
+    //         sections.forEach((section) => {
+    //             if (section) observer.unobserve(section);
+    //         });
+    //     };
+    // }, []);
 
 
     return (
