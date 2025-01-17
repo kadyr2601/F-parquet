@@ -32,7 +32,7 @@ span {
 }
 
 .text-banner {
-    background-color: rgba(43, 47, 57, 0.8);
+    background-color: rgba(79, 83, 92, 0.65);
 }
 
 .btn {
@@ -48,13 +48,12 @@ span {
     right: 50px;
 }
 
-
 .header-section {
     padding: 5px 50px;
     z-index: 2;
     position: sticky;
     top: 0;
-    background-color: transparent;
+    background-color: rgba(136, 130, 126, 0.21);
     transition: background-color 0.5s ease;
 
     @media screen and (max-width: 768px) {
@@ -106,7 +105,6 @@ span {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 999;
 }
-
 
 .mainBanner {
     z-index: 1;
@@ -186,7 +184,6 @@ span {
     }
 }
 
-
 .modal-img {
     position: relative;
     height: 80vh;
@@ -198,8 +195,10 @@ span {
 }
 
 .section-2 {
-    padding: 60px 30px;
+    padding: 30px;
     position: relative;
+    max-width: 1420px;
+    margin: 0 auto;
 
     @media screen and (max-width: 768px) {
         width: 100%;
@@ -293,10 +292,11 @@ span {
 
 }
 
-
 .section-3 {
-    padding: 60px 30px;
+    padding: 30px;
     position: relative;
+    max-width: 1420px;
+    margin: 0 auto;
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -391,10 +391,11 @@ span {
 
 }
 
-
 .section-4 {
-    padding: 60px 30px;
+    padding: 30px;
     position: relative;
+    max-width: 1420px;
+    margin: 0 auto;
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -489,10 +490,11 @@ span {
 
 }
 
-
 .section-5 {
-    padding: 60px 30px;
+    padding: 30px;
     position: relative;
+    max-width: 1420px;
+    margin: 0 auto;
 
     @media screen and (max-width: 768px) {
         display: flex;
@@ -592,7 +594,6 @@ span {
 
 }
 
-
 .about-us {
     padding: 60px 0;
     display: flex;
@@ -607,8 +608,8 @@ span {
     }
 
     .image {
-        height: 80vh;
-        width: 35%;
+        height: 90vh;
+        width: 40%;
         position: relative;
 
         @media screen and (max-width: 768px) {
@@ -624,7 +625,7 @@ span {
     .section {
         display: flex;
         flex-direction: column;
-        width: 65%;
+        width: 60%;
         padding-right: 30px;
         gap: 80px;
 
@@ -703,7 +704,6 @@ span {
     }
 }
 
-
 .projects-section {
     display: flex;
     flex-direction: column;
@@ -741,7 +741,6 @@ span {
         }
     }
 }
-
 
 .reviews-section {
     padding: 60px 30px;
@@ -822,7 +821,7 @@ span {
             h1 {
                 color: white;
                 border-radius: 20px;
-                border: 1px solid #ef5d5d;
+                border: 1px solid red;
                 font-size: 1.7em;
                 margin-bottom: 40px;
                 padding: 0 60px;
@@ -916,7 +915,7 @@ span {
     width: 100%;
     position: relative;
     margin-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 
     @media screen and (max-width: 768px) {
         height: 260px;
@@ -926,7 +925,7 @@ span {
 .gallery-section {
     display: flex;
     flex-direction: column;
-    padding: 60px 30px;
+    padding: 30px;
     color: white;
 
     h1 {
@@ -1053,7 +1052,6 @@ span {
 
 
 }
-
 
 .parquet-sanding {
     display: flex;
@@ -1273,7 +1271,6 @@ span {
 
 
 }
-
 
 .local-restoration {
     display: flex;

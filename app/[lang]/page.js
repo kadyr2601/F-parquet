@@ -39,7 +39,7 @@ export default async function Home() {
           {homePage && homePage.projects ? <Projects props={homePage.projects}/> : null}
           {homePage && homePage.reviews ? <Reviews props={homePage.reviews}/> : null}
         {/*<Contacts/>*/}
-          <ContactsBtn/>
+        {/*  <ContactsBtn/>*/}
       </>
   );
 }

@@ -67,6 +67,12 @@ function Header() {
     //     };
     // }, []);
 
+    const [open, setOpen] = useState(false);
+
+    const handleClick = () => {
+        setOpen(!open);
+    }
+
 
     return (
         <div id="sticky-element" className={`flex flex-row justify-between items-center header-section ${isSticky ? "is-sticky" : ''}`}>
@@ -76,7 +82,7 @@ function Header() {
             <div className="nav flex gap-5">
                 <Link
                     href={'#parquet-sanding'}
-                      className={activeSection === 'parquet-sanding' ? 'active' : ''}
+                    className={activeSection === 'parquet-sanding' ? 'active' : ''}
                 >{params.lang == "en" ? "Parquet Sanding & Parquet toning" : "Шлифовка и тонирование паркета"}</Link>
                 <Link
                     href={'#parquet-installation'}
@@ -91,6 +97,25 @@ function Header() {
                     href={'#local-restoration'}
                     className={activeSection === 'local-restoration' ? 'active' : ''}
                 >{params.lang == "en" ? "Local Restoration" : "Локальное восстановление"}</Link>
+                <Link
+                    href={'#'}
+                    className={'active'}
+                    onClick={handleClick}
+                >{params.lang == "en" ? "Contacts" : "Контакты"}</Link>
+                <div className={'contacts-btn'}>
+                    {/*<div className={!open ? "not-open" : "disable"} onClick={handleClick}>*/}
+                    {/*    <span>{params.lang == 'en' ? "Contacts" : "Связаться"}</span>*/}
+                    {/*</div>*/}
+
+                    <div className={open ? "open" : "disable"}>
+                        <div className="contacts">
+                            <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>
+                            <Link href="tel:+971567140101">+ 971 56 714 01 01</Link>
+                            <Link href="mailto:info@fixworks-team.com">info@fixworks-team.com</Link>
+                        </div>
+                        <div className="close" onClick={handleClick}>{params.lang == 'en' ? "Close" : "Закрыть"}</div>
+                    </div>
+                </div>
             </div>
             <div className="language flex items-center gap-5">
                 <Link href={'/en'}>EN</Link>
