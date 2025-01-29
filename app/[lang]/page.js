@@ -26,11 +26,12 @@ export default async function Home() {
     const homePage = await getHomePage();
 
   return (
-      <>
+      <div>
           <Header/>
 
           {homePage && homePage.main_banner ? <MainBanner banner={homePage.main_banner}/> : null}
           {/*<div className="image-section-2" id={'target-id'}><Image alt={'img'} src={process.env.API_URL + homePage.section_image} fill={true}/></div>*/}
+
           {homePage && homePage.parquet_sanding ? <ParquetSanding props={homePage.parquet_sanding}/> : null}
           {homePage && homePage.parquet_installation ? <ParquetInstallation props={homePage.parquet_installation}/> : null}
           {homePage && homePage.parquet_refinishing ? <ParquetRefinishing props={homePage.parquet_refinishing}/> : null}
@@ -39,9 +40,10 @@ export default async function Home() {
           {homePage && homePage.about_us ? <AboutUs props={homePage.about_us}/> : null}
           {homePage && homePage.projects ? <Projects props={homePage.projects}/> : null}
           {homePage && homePage.reviews ? <Reviews props={homePage.reviews}/> : null}
+
         {/*<Contacts/>*/}
         {/*  <ContactsBtn/>*/}
-      </>
+      </div>
   );
 }
 

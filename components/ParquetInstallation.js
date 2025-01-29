@@ -10,7 +10,7 @@ const ParquetInstallation = ({props}) => {
     const params = useParams();
 
     return (
-        <div className={'section-3'} id={'parquet-installation'}>
+        <div className={'section-3 container'} id={'parquet-installation'}>
             <div className={'images'}>
                 <div className={'image'} data-aos={"fade-up"}>
                     <Image alt={'san1'} src={process.env.API_URL + props.image_left} fill={true}/>

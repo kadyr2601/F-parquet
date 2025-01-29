@@ -75,7 +75,8 @@ function Header() {
 
 
     return (
-        <div id="sticky-element" className={`flex flex-row justify-between items-center header-section ${isSticky ? "is-sticky" : ''}`}>
+        <div id="sticky-element"
+             className={`flex flex-row justify-between items-center header-section ${isSticky ? "is-sticky" : ''}`}>
             <div className="logo">
                 <Image alt={'Logo'} src={Logo} fill={true}/>
             </div>
@@ -112,6 +113,23 @@ function Header() {
                         <div className="close" onClick={handleClick}>{params.lang == 'en' ? "Close" : "Закрыть"}</div>
                     </div>
                 </div>
+            </div>
+            <div className={'contacts-btn'}>
+                <div className={open ? "open" : "disable"}>
+                    <div className="contacts">
+                        <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>
+                        <Link href="tel:+971567140101">+ 971 56 714 01 01</Link>
+                        <Link href="mailto:info@fixworks-team.com">info@fixworks-team.com</Link>
+                    </div>
+                    <div className="close" onClick={handleClick}>{params.lang == 'en' ? "Close" : "Закрыть"}</div>
+                </div>
+            </div>
+            <div className="nav-mobile">
+                <Link
+                    href={'#'}
+                    className={''}
+                    onClick={handleClick}
+                >{params.lang == "en" ? "Contacts" : "Контакты"}</Link>
             </div>
             <div className="language flex items-center gap-5">
                 <Link href={'/en'}>EN</Link>

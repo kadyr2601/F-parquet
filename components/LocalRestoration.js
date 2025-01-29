@@ -8,7 +8,7 @@ import Link from "next/link";
 const LocalRestoration = ({props}) => {
     const params = useParams();
     return (
-        <div className={'section-5'} id={'local-restoration'}>
+        <div className={'section-5 container'} id={'local-restoration'}>
             <div className={'images'}>
                 <div className={'image'} data-aos={"fade-down"} data-aos-delay={"300"}>
                     <Image alt={'san1'} src={process.env.API_URL + props.image_left} fill={true}/>

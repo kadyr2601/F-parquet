@@ -14,7 +14,7 @@ const ParquetSanding = ({props}) => {
 
 
     return (
-        <div className={'section-2'} id="parquet-sanding">
+        <div className={'section-2 container'} id="parquet-sanding">
             <div className={'images'}>
                 <div className={'image'} data-aos={"fade-right"}>
                     <Image alt={'san1'} src={process.env.API_URL + props.image_left} fill={true}/>
