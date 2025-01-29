@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+'use client'
+import React, { useEffect } from 'react';
 
-export default function Modal({ children, isOpen, onClose }) {
-    // Close the modal when the user presses the Escape key.
+export default function ReviewModal({ children, isOpen, onClose }) {
+
     useEffect(() => {
         function handleKeyDown(e) {
             if (e.key === 'Escape') {
@@ -26,7 +27,7 @@ export default function Modal({ children, isOpen, onClose }) {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                backgroundColor: 'rgba(0,0,0,0.94)',
+                backgroundColor: 'rgba(28,29,34,0.97)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',

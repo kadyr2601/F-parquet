@@ -14,7 +14,7 @@ function Header() {
 
     useEffect(() => {
         const stickyElement = document.getElementById('sticky-element');
-        const targetElement = document.getElementById('target-id');
+        const targetElement = document.getElementById('parquet-sanding');
 
         const handleScroll = () => {
             if (stickyElement && targetElement) {
@@ -99,14 +99,10 @@ function Header() {
                 >{params.lang == "en" ? "Local Restoration" : "Локальное восстановление"}</Link>
                 <Link
                     href={'#'}
-                    className={'active'}
+                    className={''}
                     onClick={handleClick}
                 >{params.lang == "en" ? "Contacts" : "Контакты"}</Link>
                 <div className={'contacts-btn'}>
-                    {/*<div className={!open ? "not-open" : "disable"} onClick={handleClick}>*/}
-                    {/*    <span>{params.lang == 'en' ? "Contacts" : "Связаться"}</span>*/}
-                    {/*</div>*/}
-
                     <div className={open ? "open" : "disable"}>
                         <div className="contacts">
                             <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>

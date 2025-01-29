@@ -2,12 +2,13 @@
 import React from 'react';
 import Image from "next/image";
 import logo from '@/public/Logo.png'
-
+import {useParams} from "next/navigation";
 
 function MainBanner({banner}) {
+    const params = useParams();
 
     const scrollToTarget = () => {
-        const targetElement = document.getElementById('target-id');
+        const targetElement = document.getElementById('parquet-sanding');
         if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
@@ -26,7 +27,8 @@ function MainBanner({banner}) {
                     <div className="down-btn">
                         &darr;
                     </div>
-                   Learn more
+                    {params.lang == 'ru' ? "Узнать больше" : "Learn more"}
+
                </div>
             </div>
         </div>

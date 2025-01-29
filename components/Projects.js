@@ -10,11 +10,11 @@ const Projects = ({props}) => {
 
     return (
         <div className={'projects-section'}>
-            <h1>{params.lang == "en" ? "Our Realized Projects" : "Наши реализованные проекты"}</h1>
+            <h1 data-aos={"fade-up"}>{params.lang == "en" ? "Our Realized Projects" : "Наши реализованные проекты"}</h1>
             <div className="cards">
                 {props && props.map((item, index) => {
                     return (
-                        <div className="card" key={index}>
+                        <div className="card" key={index}  data-aos={index > 4 ? "fade-left" : "fade-right"}>
                             <Image src={process.env.API_URL + item.icon} alt={'banner'} fill={true}/>
                         </div> )
                 } )}

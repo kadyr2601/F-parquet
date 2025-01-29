@@ -13,10 +13,10 @@ const ParquetRefinishing = ({props}) => {
     return (
         <div className={'section-4'} id={'parquet-refinishing'}>
             <div className={'images'}>
-                <div className={'image'}>
+                <div className={'image'} data-aos={"fade-right"}>
                     <Image alt={'san1'} src={process.env.API_URL + props.image_left} fill={true}/>
                 </div>
-                <div className={'image'}>
+                <div className={'image'} data-aos={"fade-left"}>
                     <Image alt={'san1'} src={process.env.API_URL + props.image_right} fill={true}/>
                     <Link className={'btn'} href={`${params.lang}/parquet-refinishing`}>{params.lang == 'en' ? "Find out the price" : "Узнать цену"}</Link>
 

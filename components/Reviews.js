@@ -1,14 +1,27 @@
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import Image from "next/image";
 import banner from '@/public/s61.webp'
 import banner2 from '@/public/s62.webp'
 import {useParams} from "next/navigation";
+import ReviewModal from "@/components/ReviewModal";
 
 
 const Reviews = ({props}) => {
 
     const params = useParams();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [review, setReview] = useState(null);
+
+    const handleClick = (obj) => {
+        setReview(obj);
+        setIsModalOpen(true);
+        console.log(obj);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <div className={'reviews-section'}>
@@ -24,7 +37,7 @@ const Reviews = ({props}) => {
                 <div className="review-cards">
                     {props && props.map((item, index) => {
                         return (
-                            <div className={'review'} key={index}>
+                            <div className={'review'} key={index} onClick={() => handleClick(item)}>
                                 <span className={'comment'}>
                                     {params.lang == 'en' ? item.comment_en : item.comment_ru}
                                 </span>
@@ -42,8 +55,20 @@ const Reviews = ({props}) => {
 
                 </div>
             </div>
+
+            <ReviewModal isOpen={isModalOpen} onClose={handleCloseModal}>
+                    {
+                        review &&
+                        <div className={'modal-content'}>
+                            <div
+                                className={'comment'}>{params.lang == 'en' ? review?.comment_en : review?.comment_ru}</div>
+                            <div className={'name'}>{review?.fullname}</div>
+                        </div>
+                    }
+            </ReviewModal>
         </div>
-    );
+    )
+        ;
 };
 
 export default Reviews;

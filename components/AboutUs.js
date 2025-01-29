@@ -10,15 +10,15 @@ const AboutUs = ({props}) => {
 
     return (
         <div className={'about-us flex flex-row'}>
-            <div className="image">
+            <div className="image" data-aos={"fade-right"}>
                 <Image src={process.env.API_URL + props.image} alt={'banner'} fill={true}/>
             </div>
             <div className="section">
                 <div className="about">
-                    <h1>{params.lang == 'ru' ? "О нас" : "About Us"}</h1>
-                    <p>{params.lang == 'ru' ? props.description_ru : props.description_en}</p>
+                    <h1 data-aos={"fade-up"}>{params.lang == 'ru' ? "О нас" : "About Us"}</h1>
+                    <p data-aos={"fade-down"}>{params.lang == 'ru' ? props.description_ru : props.description_en}</p>
                 </div>
-                <div className="cards">
+                <div className="cards" data-aos={"fade-down"}>
                     <div className="card">
                         <span>17 years</span>
                         <p>on the restorations market</p>

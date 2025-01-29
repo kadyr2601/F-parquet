@@ -93,6 +93,30 @@ span {
         }
     }
 
+    .nav-mobile {
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+
+        a {
+            cursor: pointer;
+            padding: 7px 20px;
+            border-radius: 10px;
+            color: #d6d6d6;
+            font-size: 1em;
+
+            &:hover {
+                background-color: gray;
+                box-shadow: rgba(239, 64, 79, 0.4) 5px 5px;
+            }
+        }
+
+        .active {
+            background-color: gray;
+            box-shadow: rgba(239, 64, 79, 0.4) 5px 5px;
+        }
+    }
+
     .language {
         a {
             color: white;
@@ -159,9 +183,9 @@ span {
 
             .down-btn {
                 position: relative;
-                color: #ef5d5d;
+                color: red;
                 border-radius: 50%;
-                border: 1px solid #ef5d5d;
+                border: 1px solid red;
                 padding: 15px;
                 height: 20px;
                 width: 20px;
@@ -186,16 +210,75 @@ span {
 
 .modal-img {
     position: relative;
-    height: 80vh;
-    width: 80vw;
+    height: 70vh;
+    width: 90vw;
 
     img {
+        border-radius: 10px;
         object-fit: contain;
+    }
+
+}
+
+.modal-gallery {
+    display: flex;
+    flex-direction: row;
+    height: 15vh;
+    width: 90vw;
+    gap: 20px;
+
+    .card {
+        height: 100%;
+        position: relative;
+        width: 100%;
+        border-radius: 7px;
+        margin-bottom: 50px;
+
+
+        @media screen and (max-width: 768px) {
+            height: 180px;
+        }
+
+        img {
+            border-radius: 7px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    }
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    color: white;
+    width: 70%;
+    align-self: center;
+    height: 90vh;
+    position: relative;
+
+    @media screen and (max-width: 768px){
+        width: 100%;
+        padding: 10px;
+        gap: 40px;
+    }
+
+    .comment {
+        font-size: 1.3em;
+    }
+
+    .name {
+        font-size: 1.1em;
+        background-color: #363636;
+        padding: 7px 20px;
+        border-radius: 7px;
     }
 }
 
 .section-2 {
-    padding: 30px;
+    padding-top: 20px;
     position: relative;
     max-width: 1420px;
     margin: 0 auto;
@@ -293,7 +376,7 @@ span {
 }
 
 .section-3 {
-    padding: 30px;
+    padding-top: 20px;
     position: relative;
     max-width: 1420px;
     margin: 0 auto;
@@ -392,7 +475,7 @@ span {
 }
 
 .section-4 {
-    padding: 30px;
+    padding-top: 20px;
     position: relative;
     max-width: 1420px;
     margin: 0 auto;
@@ -491,7 +574,7 @@ span {
 }
 
 .section-5 {
-    padding: 30px;
+    padding-top: 20px;
     position: relative;
     max-width: 1420px;
     margin: 0 auto;
@@ -595,7 +678,7 @@ span {
 }
 
 .about-us {
-    padding: 60px 0;
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -707,7 +790,7 @@ span {
 .projects-section {
     display: flex;
     flex-direction: column;
-    padding: 60px 30px;
+    padding-top: 20px;
     color: white;
 
     h1 {
@@ -723,27 +806,34 @@ span {
     .cards {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        gap: 35px;
+        gap: 20px;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
 
         @media screen and (max-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
         }
 
         .card {
             height: 200px;
             position: relative;
             box-shadow: rgb(82, 82, 82) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            border-radius: 7px;
 
             @media screen and (max-width: 768px) {
                 height: 180px;
+            }
+
+            img {
+                border-radius: 7px;
             }
         }
     }
 }
 
 .reviews-section {
-    padding: 60px 30px;
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     gap: 60px;
@@ -846,9 +936,9 @@ span {
                 position: relative;
                 cursor: pointer;
 
-                &:hover {
-                    background-color: rgba(53, 57, 76, 0.4);
-                }
+                //&:hover {
+                //    background-color: rgba(53, 57, 76, 0.4);
+                //}
 
                 span {
                     display: -webkit-box;
@@ -925,7 +1015,7 @@ span {
 .gallery-section {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding-top: 20px;
     color: white;
 
     h1 {
@@ -966,9 +1056,6 @@ span {
 }
 
 .contacts-btn {
-    @media screen and (max-width: 678px){
-        display: none;
-    }
 
     .disable {
         display: none;
