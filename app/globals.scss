@@ -4,6 +4,7 @@
 
 :root {
     background: #1a1a1b;
+    overflow-x: hidden;
 }
 
 body {
@@ -12,6 +13,7 @@ body {
     padding: 0;
     font-family: "Neue Montreal";
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .container {
@@ -19,7 +21,6 @@ body {
 
     @media screen and (max-width: 768px) {
         padding: 0 20px;
-        overflow: hidden;
     }
 }
 
@@ -223,6 +224,10 @@ span {
     height: 70vh;
     width: 90vw;
 
+    @media screen and (max-width: 768px) {
+        height: 60vh;
+    }
+
     img {
         border-radius: 10px;
         object-fit: contain;
@@ -237,17 +242,18 @@ span {
     width: 90vw;
     gap: 20px;
 
+    @media screen and (max-width: 768px) {
+        height: 35vh;
+        display: grid;
+        grid-template-columns: repeat(4, 2fr);
+    }
+
     .card {
         height: 100%;
         position: relative;
         width: 100%;
         border-radius: 7px;
         margin-bottom: 50px;
-
-
-        @media screen and (max-width: 768px) {
-            height: 180px;
-        }
 
         img {
             border-radius: 7px;
