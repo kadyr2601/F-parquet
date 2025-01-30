@@ -1,14 +1,24 @@
 'use client'
-import React from 'react';
+import React, {useEffect} from 'react';
 import Image from "next/image";
 import Button from "@/components/Button";
 import {useParams} from "next/navigation";
 import Link from "next/link";
+import AOS from "aos";
 
 
 const ParquetRefinishing = ({props}) => {
 
     const params = useParams();
+
+    useEffect(() => {
+        AOS.init(
+            {
+                delay: 300,
+                duration: 1200,
+            }
+        )
+    }, [])
 
     return (
         <div className={'section-4 container'} id={'parquet-refinishing'}>

@@ -9,7 +9,12 @@ const ParquetSanding = ({props}) => {
     const params = useParams();
 
     useEffect(() => {
-        AOS.init()
+        AOS.init(
+            {
+                delay: 300,
+                duration: 1200,
+            }
+        )
     }, [])
 
 

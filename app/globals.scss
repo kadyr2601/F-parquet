@@ -243,9 +243,7 @@ span {
     gap: 20px;
 
     @media screen and (max-width: 768px) {
-        height: 35vh;
-        display: grid;
-        grid-template-columns: repeat(4, 2fr);
+        display: none;
     }
 
     .card {
@@ -829,6 +827,8 @@ span {
 
         @media screen and (max-width: 768px) {
             grid-template-columns: repeat(2, 1fr);
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .card {
@@ -942,6 +942,11 @@ span {
             width: 100%;
             gap: 25px;
 
+            @media screen and (max-width: 768px) {
+                padding: 0 20px;
+
+            }
+
             .review {
                 height: 165px;
                 border-radius: 10px;
@@ -1033,6 +1038,11 @@ span {
     flex-direction: column;
     padding-top: 20px;
     color: white;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 20px;
+
+    }
 
     h1 {
         text-align: center;

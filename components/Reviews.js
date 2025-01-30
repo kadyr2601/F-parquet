@@ -1,11 +1,11 @@
 'use client'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import banner from '@/public/s61.webp'
 import banner2 from '@/public/s62.webp'
 import {useParams} from "next/navigation";
 import ReviewModal from "@/components/ReviewModal";
-
+import AOS from 'aos';
 
 const Reviews = ({props}) => {
 
@@ -16,12 +16,15 @@ const Reviews = ({props}) => {
     const handleClick = (obj) => {
         setReview(obj);
         setIsModalOpen(true);
-        console.log(obj);
     };
 
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
+
+    useEffect(() => {
+        AOS.init()
+    }, [])
 
     return (
         <div className={'reviews-section'}>
