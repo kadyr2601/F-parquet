@@ -1,14 +1,22 @@
+'use client';
 import "./globals.scss";
 import "aos/dist/aos.css"
-
-
-export const metadata = {
-  title: "FIXWORKS-PARQUET",
-  description: "Fixworks Parquet service",
-};
+import React, {useEffect} from "react";
+import AOS from "aos";
 
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    AOS.init(
+        {
+          delay: 300,
+          once: false,
+          duration: 1200,
+        }
+    )
+  }, [])
+
+
   return (
     <html lang="en">
     <head>

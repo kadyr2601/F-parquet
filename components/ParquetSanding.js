@@ -8,15 +8,15 @@ import AOS from 'aos'
 const ParquetSanding = ({props}) => {
     const params = useParams();
 
-    useEffect(() => {
-        AOS.init(
-            {
-                once: false,
-                delay: 300,
-                duration: 1200,
-            }
-        )
-    }, [])
+    // useEffect(() => {
+    //     AOS.init(
+    //         {
+    //             once: false,
+    //             delay: 300,
+    //             duration: 1200,
+    //         }
+    //     )
+    // }, [])
 
 
     return (

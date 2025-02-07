@@ -21,6 +21,11 @@ async function getHomePage() {
     return data
 }
 
+export const metadata = {
+    title: "FIXWORKS-PARQUET",
+    description: "Fixworks Parquet service",
+};
+
 export default async function Home() {
 
     const homePage = await getHomePage();

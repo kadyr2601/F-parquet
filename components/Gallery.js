@@ -19,15 +19,15 @@ const Gallery = ({props}) => {
         setIsModalOpen(false);
     };
 
-    useEffect(() => {
-        AOS.init(
-            {
-                delay: 300,
-                once: false,
-                duration: 1200,
-            }
-        )
-    }, [])
+    // useEffect(() => {
+    //     AOS.init(
+    //         {
+    //             delay: 300,
+    //             once: false,
+    //             duration: 1200,
+    //         }
+    //     )
+    // }, [])
 
     return (
         <div className={'gallery-section'}>

@@ -8,15 +8,15 @@ const Projects = ({props}) => {
 
     const params = useParams();
 
-    useEffect(() => {
-        AOS.init(
-            {
-                delay: 300,
-                once: false,
-                duration: 1200,
-            }
-        )
-    }, [])
+    // useEffect(() => {
+    //     AOS.init(
+    //         {
+    //             delay: 300,
+    //             once: false,
+    //             duration: 1200,
+    //         }
+    //     )
+    // }, [])
 
     return (
         <div className={'projects-section'}>

@@ -10,15 +10,15 @@ import AOS from "aos";
 const LocalRestoration = ({props}) => {
     const params = useParams();
 
-    useEffect(() => {
-        AOS.init(
-            {
-                delay: 300,
-                once: false,
-                duration: 1200,
-            }
-        )
-    }, [])
+    // useEffect(() => {
+    //     AOS.init(
+    //         {
+    //             delay: 300,
+    //             once: false,
+    //             duration: 1200,
+    //         }
+    //     )
+    // }, [])
     return (
         <div className={'section-5 container'} id={'local-restoration'}>
             <div className={'images'}>
