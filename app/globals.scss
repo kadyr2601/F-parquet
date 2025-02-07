@@ -57,6 +57,53 @@ span {
     right: 50px;
 }
 
+.nav-contacts {
+    position: relative;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+    a {
+        cursor: pointer;
+        padding: 7px 20px;
+        border-radius: 10px;
+        color: #d6d6d6;
+        font-size: 1em;
+
+        &:hover {
+            background-color: gray;
+            box-shadow: rgba(239, 64, 79, 0.4) 5px 5px;
+        }
+    }
+
+    .active {
+        background-color: gray;
+        box-shadow: rgba(239, 64, 79, 0.4) 5px 5px;
+    }
+}
+
+.nav-contacts-m {
+    position: relative;
+
+    a {
+        cursor: pointer;
+        padding: 7px 20px;
+        border-radius: 10px;
+        color: #d6d6d6;
+        font-size: 1em;
+
+        &:hover {
+            background-color: gray;
+            box-shadow: rgba(239, 64, 79, 0.4) 5px 5px;
+        }
+    }
+
+    .active {
+        background-color: gray;
+        box-shadow: rgba(239, 64, 79, 0.4) 5px 5px;
+    }
+}
+
 .header-section {
     padding: 5px 50px;
     z-index: 2;
@@ -101,6 +148,10 @@ span {
         .active {
             background-color: gray;
             box-shadow: rgba(239, 64, 79, 0.4) 5px 5px;
+        }
+
+        .cntc-btn {
+            //margin-left: 25px;
         }
     }
 
@@ -882,7 +933,7 @@ span {
             margin-bottom: 15vh;
 
             img {
-                object-fit: cover;
+                object-fit: contain;
             }
 
             @media screen and (max-width: 768px) {
@@ -901,6 +952,10 @@ span {
             height: 80%;
             margin-bottom: 0;
             margin-top: 15vh;
+
+            img {
+                object-fit: contain;
+            }
 
             @media screen and (max-width: 768px) {
                 height: 100%;
@@ -1045,7 +1100,6 @@ span {
 
     @media screen and (max-width: 768px) {
         padding: 0 20px;
-
     }
 
     h1 {
@@ -1085,90 +1139,156 @@ span {
     }
 }
 
-.contacts-btn {
+.open {
+    // Initial hidden state
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.5s ease;
+    opacity: 0; // optional to also fade in/out
+    pointer-events: none; // optional to prevent clicks when closed
 
-    .disable {
-        display: none;
+    // Your existing styling
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    position: absolute;
+    top: 50px;
+    left: -70px;
+    right: 0;
+    height: 220px;
+    width: 250px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    z-index: 999;
+
+    &.open-active {
+        // Shown state
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
     }
 
-    .not-open {
-        position: fixed;
-        bottom: 5%;
-        right: 5%;
-        background-color: white;
-        height: 80px;
-        width: 80px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 999;
-
-        span {
-            color: #1a1a1b;
-            font-size: 0.8em;
-            font-weight: 600;
-        }
-    }
-
-    .open {
-        background-color: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        position: fixed;
-        bottom: 5%;
-        right: 2px;
-        height: 220px;
-        width: 250px;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+    .contacts {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding: 15px;
-        z-index: 999;
+        gap: 15px;
 
-        .contacts {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            a {
-                background-color: #363636;
-                color: white;
-                border-radius: 5px;
-                padding: 5px;
-                text-align: center;
-
-                &:hover {
-                    background-color: rgba(54, 54, 54, 0.4);
-                }
-            }
-        }
-
-        .close {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-            align-self: flex-end;
-            font-size: 1em;
-            border-radius: 10px;
-            background-color: #1c1d22;
+        a {
+            background-color: #363636;
             color: white;
-            cursor: pointer;
+            border-radius: 7px;
+            padding: 5px;
+            text-align: center;
+
             &:hover {
                 background-color: rgba(54, 54, 54, 0.4);
             }
-
         }
-
     }
 
-
+    .close {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        align-self: flex-end;
+        font-size: 1em;
+        border-radius: 10px;
+        background-color: #1c1d22;
+        color: white;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(54, 54, 54, 0.4);
+        }
+    }
 }
+
+
+//.contacts-btn {
+//
+//    .disable {
+//        display: none;
+//    }
+//    .not-open {
+//        position: absolute;
+//        bottom: 5%;
+//        right: 5%;
+//        background-color: white;
+//        height: 80px;
+//        width: 80px;
+//        border-radius: 50%;
+//        cursor: pointer;
+//        display: flex;
+//        align-items: center;
+//        justify-content: center;
+//        z-index: 999;
+//
+//        span {
+//            color: #1a1a1b;
+//            font-size: 0.8em;
+//            font-weight: 600;
+//        }
+//    }
+//
+//    .open {
+//        background-color: rgba(255, 255, 255, 0.2);
+//        backdrop-filter: blur(8px);
+//        -webkit-backdrop-filter: blur(8px);
+//        position: absolute;
+//        top: 0;
+//        left: 0;
+//        right: 0;
+//        height: 220px;
+//        width: 250px;
+//        border-radius: 7px;
+//        display: flex;
+//        flex-direction: column;
+//        justify-content: space-between;
+//        padding: 15px;
+//        z-index: 999;
+//
+//        .contacts {
+//            display: flex;
+//            flex-direction: column;
+//            gap: 15px;
+//
+//            a {
+//                background-color: #363636;
+//                color: white;
+//                border-radius: 7px;
+//                padding: 5px;
+//                text-align: center;
+//
+//                &:hover {
+//                    background-color: rgba(54, 54, 54, 0.4);
+//                }
+//            }
+//        }
+//
+//        .close {
+//            width: 100%;
+//            display: flex;
+//            align-items: center;
+//            justify-content: center;
+//            padding: 5px;
+//            align-self: flex-end;
+//            font-size: 1em;
+//            border-radius: 10px;
+//            background-color: #1c1d22;
+//            color: white;
+//            cursor: pointer;
+//            &:hover {
+//                background-color: rgba(54, 54, 54, 0.4);
+//            }
+//
+//        }
+//
+//    }
+//}
 
 .parquet-sanding {
     display: flex;

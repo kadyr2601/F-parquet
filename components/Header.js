@@ -1,5 +1,5 @@
 'use client'
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Image from "next/image";
 import Logo from '@/public/logo-color.svg'
 import Link from 'next/link'
@@ -32,46 +32,39 @@ function Header() {
 
     const [activeSection, setActiveSection] = useState('');
 
-    // useEffect(() => {
-    //     const sections = [
-    //         document.getElementById('parquet-sanding'),
-    //         document.getElementById('parquet-installation'),
-    //         document.getElementById('parquet-refinishing'),
-    //         document.getElementById('local-restoration'),
-    //     ];
-    //
-    //     const observer = new IntersectionObserver(
-    //         (entries) => {
-    //             const visibleSections = entries
-    //                 .filter((entry) => entry.isIntersecting)
-    //                 .map((entry) => entry.target.id);
-    //
-    //             // Update the active section or clear it if none of the observed sections are visible
-    //             if (visibleSections.length > 0) {
-    //                 setActiveSection(visibleSections[0]); // Use the first visible section
-    //             } else {
-    //                 setActiveSection(''); // No observed section is in view
-    //             }
-    //         },
-    //         { threshold: 0.5 } // Trigger when 50% of the section is visible
-    //     );
-    //
-    //     sections.forEach((section) => {
-    //         if (section) observer.observe(section);
-    //     });
-    //
-    //     return () => {
-    //         sections.forEach((section) => {
-    //             if (section) observer.unobserve(section);
-    //         });
-    //     };
-    // }, []);
-
     const [open, setOpen] = useState(false);
 
     const handleClick = () => {
         setOpen(!open);
     }
+
+    const overlayRef = useRef(null);
+
+    // Toggle open/close when the button is clicked
+    const handleToggle = () => {
+        setOpen(prev => !prev);
+    };
+
+    // Close when clicking outside
+    useEffect(() => {
+        function handleOutsideClick(event) {
+            if (
+                overlayRef.current &&
+                !overlayRef.current.contains(event.target)
+            ) {
+                // If click is outside overlayRef => close
+                setOpen(false);
+            }
+        }
+
+        // Add a "mousedown" or "click" listener
+        document.addEventListener("mousedown", handleOutsideClick);
+
+        // Cleanup listener on unmount
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, []);
 
 
     return (
@@ -98,13 +91,25 @@ function Header() {
                     href={'#local-restoration'}
                     className={activeSection === 'local-restoration' ? 'active' : ''}
                 >{params.lang == "en" ? "Local Restoration" : "Локальное восстановление"}</Link>
+                {/*<div className={'contacts-btn'}>*/}
+                {/*    <div className={open ? "open" : "disable"}>*/}
+                {/*        <div className="contacts">*/}
+                {/*            <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>*/}
+                {/*            <Link href="tel:+971567140101">+ 971 56 714 01 01</Link>*/}
+                {/*            <Link href="mailto:info@fixworks-team.com">info@fixworks-team.com</Link>*/}
+                {/*        </div>*/}
+                {/*        <div className="close" onClick={handleClick}>{params.lang == 'en' ? "Close" : "Закрыть"}</div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+            </div>
+            <div className="nav-contacts">
                 <Link
                     href={'#'}
-                    className={''}
+                    className={'cntc-btn'}
                     onClick={handleClick}
                 >{params.lang == "en" ? "Contacts" : "Контакты"}</Link>
-                <div className={'contacts-btn'}>
-                    <div className={open ? "open" : "disable"}>
+                <div className={'contacts-btn'} ref={overlayRef}>
+                    <div className={`open ${open ? "open-active" : ""}`}>
                         <div className="contacts">
                             <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>
                             <Link href="tel:+971567140101">+ 971 56 714 01 01</Link>
@@ -114,22 +119,27 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div className={'contacts-btn'}>
-                <div className={open ? "open" : "disable"}>
-                    <div className="contacts">
-                        <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>
-                        <Link href="tel:+971567140101">+ 971 56 714 01 01</Link>
-                        <Link href="mailto:info@fixworks-team.com">info@fixworks-team.com</Link>
-                    </div>
-                    <div className="close" onClick={handleClick}>{params.lang == 'en' ? "Close" : "Закрыть"}</div>
-                </div>
-            </div>
+
             <div className="nav-mobile">
-                <Link
-                    href={'#'}
-                    className={''}
-                    onClick={handleClick}
-                >{params.lang == "en" ? "Contacts" : "Контакты"}</Link>
+
+                <div className="nav-contacts-m">
+                    <Link
+                        href={'#'}
+                        className={'cntc-btn'}
+                        onClick={handleClick}
+                    >{params.lang == "en" ? "Contacts" : "Контакты"}</Link>
+                    <div className={'contacts-btn'} ref={overlayRef}>
+                        <div className={`open ${open ? "open-active" : ""}`}>
+                            <div className="contacts">
+                                <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>
+                                <Link href="tel:+971567140101">+ 971 56 714 01 01</Link>
+                                <Link href="mailto:info@fixworks-team.com">info@fixworks-team.com</Link>
+                            </div>
+                            <div className="close"
+                                 onClick={handleClick}>{params.lang == 'en' ? "Close" : "Закрыть"}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="language flex items-center gap-5">
                 <Link href={'/en'}>EN</Link>
