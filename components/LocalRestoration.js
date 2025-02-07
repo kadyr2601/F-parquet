@@ -14,6 +14,7 @@ const LocalRestoration = ({props}) => {
         AOS.init(
             {
                 delay: 300,
+                once: false,
                 duration: 1200,
             }
         )

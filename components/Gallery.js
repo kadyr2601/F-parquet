@@ -23,6 +23,7 @@ const Gallery = ({props}) => {
         AOS.init(
             {
                 delay: 300,
+                once: false,
                 duration: 1200,
             }
         )
@@ -30,7 +31,7 @@ const Gallery = ({props}) => {
 
     return (
         <div className={'gallery-section'}>
-            <h1 data-aos={"fade-left"}>{params.lang == 'en' ? 'Our Gallery' : "Наша галерея"}</h1>
+            <h1 data-aos={"fade-left"}>{params.lang == 'en' ? 'Gallery' : "Галерея"}</h1>
 
             <div className="cards">
                 {props && props.map((item, index) => {

@@ -11,6 +11,7 @@ const ParquetSanding = ({props}) => {
     useEffect(() => {
         AOS.init(
             {
+                once: false,
                 delay: 300,
                 duration: 1200,
             }
