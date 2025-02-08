@@ -1,9 +1,8 @@
 'use client'
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useParams} from "next/navigation";
 import Image from "next/image";
 import Modal from "@/components/Modal";
-import AOS from 'aos';
 
 const Gallery = ({props}) => {
     const params = useParams();
@@ -18,16 +17,6 @@ const Gallery = ({props}) => {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
-
-    // useEffect(() => {
-    //     AOS.init(
-    //         {
-    //             delay: 300,
-    //             once: false,
-    //             duration: 1200,
-    //         }
-    //     )
-    // }, [])
 
     return (
         <div className={'gallery-section'}>

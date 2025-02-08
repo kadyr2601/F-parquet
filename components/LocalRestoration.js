@@ -1,24 +1,13 @@
 'use client'
 import React, {useEffect} from 'react';
 import Image from "next/image";
-import Button from "@/components/Button";
 import {useParams} from "next/navigation";
 import Link from "next/link";
-import AOS from "aos";
 
 
 const LocalRestoration = ({props}) => {
     const params = useParams();
 
-    // useEffect(() => {
-    //     AOS.init(
-    //         {
-    //             delay: 300,
-    //             once: false,
-    //             duration: 1200,
-    //         }
-    //     )
-    // }, [])
     return (
         <div className={'section-5 container'} id={'local-restoration'}>
             <div className={'images'}>

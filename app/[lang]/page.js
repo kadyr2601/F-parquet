@@ -15,7 +15,7 @@ import Header from "@/components/Header";
 
 
 async function getHomePage() {
-    const res = await fetch(`${process.env.API_URL}/service/home-page`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.API_URL}/service/home-page`);
     if (!res.ok) return null;
     const data = await res.json();
     return data

@@ -6,15 +6,15 @@ import AOS from "aos";
 
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    AOS.init(
-        {
-          delay: 300,
-          once: false,
-          duration: 1200,
-        }
-    )
-  }, [])
+  // useEffect(() => {
+  //   AOS.init(
+  //       {
+  //         delay: 300,
+  //         once: false,
+  //         duration: 1200,
+  //       }
+  //   )
+  // }, [])
 
 
   return (

@@ -91,16 +91,6 @@ function Header() {
                     href={'#local-restoration'}
                     className={activeSection === 'local-restoration' ? 'active' : ''}
                 >{params.lang == "en" ? "Local Restoration" : "Локальное восстановление"}</Link>
-                {/*<div className={'contacts-btn'}>*/}
-                {/*    <div className={open ? "open" : "disable"}>*/}
-                {/*        <div className="contacts">*/}
-                {/*            <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>*/}
-                {/*            <Link href="tel:+971567140101">+ 971 56 714 01 01</Link>*/}
-                {/*            <Link href="mailto:info@fixworks-team.com">info@fixworks-team.com</Link>*/}
-                {/*        </div>*/}
-                {/*        <div className="close" onClick={handleClick}>{params.lang == 'en' ? "Close" : "Закрыть"}</div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
             </div>
             <div className="nav-contacts">
                 <Link

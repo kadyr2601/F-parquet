@@ -13,7 +13,6 @@ body {
     padding: 0;
     font-family: "Neue Montreal";
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 .container {
@@ -717,6 +716,8 @@ span {
             margin-top: 40px;
             padding: 25px;
             width: 100%;
+            bottom: 0;
+            left: 0;
         }
 
         span {
