@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 async function getData() {
     const res = await fetch(`${process.env.API_URL}/service/parquet-sanding`, { cache: 'no-store' });
@@ -11,22 +12,25 @@ async function getData() {
 
 const Page = async ({params}) => {
     const data = await getData();
-    const {lang} = params
+    const {lang} = await params
+
+    if (!data) return <div>Failed to load</div>;
 
     return (
         <div className="parquet-sanding">
             <div className="up">
-                <div className="video">
-                    <video src={process.env.API_URL + data.video} autoPlay muted loop controls={false}/>
-                </div>
-
-                <div className="text">
-                    {lang == "en" ? data.description_en : data.description_ru}
-                </div>
-
-                <div className="image">
-                    <Image alt={'img'} src={process.env.API_URL + data.image} fill={true}/>
-                </div>
+                {
+                    data.map((item, index) => (
+                        <div key={index} className="ps-card">
+                            <h1>{lang == "en" ? item.title_en : item.title_ru}</h1>
+                            <BeforeAfterSlider
+                                beforeImage={process.env.API_URL + item.image_before}
+                                afterImage={process.env.API_URL + item.image_after}
+                            />
+                            <p>{lang == "en" ? item.price_en : item.price_ru}</p>
+                        </div>
+                    ))
+                }
             </div>
             <Link className="down" href={`/${lang}`}>
                 {lang == "en" ? "Go to back" : "Вернуться назад"}
