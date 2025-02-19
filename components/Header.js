@@ -77,20 +77,20 @@ function Header() {
                 <Link
                     href={'#parquet-sanding'}
                     className={activeSection === 'parquet-sanding' ? 'active' : ''}
-                >{params.lang == "en" ? "Parquet Sanding & Parquet toning" : "Шлифовка и тонирование паркета"}</Link>
+                >{params.lang == "en" ? "Parquet sanding & toning" : "Шлифовка & тонировка паркета"}</Link>
                 <Link
                     href={'#parquet-installation'}
                     className={activeSection === 'parquet-installation' ? 'active' : ''}
-                >{params.lang == "en" ? "Parquet Installation" : "Установка паркета"}</Link>
+                >{params.lang == "en" ? "Parquet installation" : "Укладка паркета"}</Link>
                 <Link
                     href={'#parquet-refinishing'}
                     className={activeSection === 'parquet-refinishing' ? 'active' : ''}
-                >{params.lang == "en" ? "Parquet Refinishing" : "Полировка паркета"}</Link>
+                >{params.lang == "en" ? "Parquet cleaning" : "Механический клининг паркета"}</Link>
 
                 <Link
                     href={'#local-restoration'}
                     className={activeSection === 'local-restoration' ? 'active' : ''}
-                >{params.lang == "en" ? "Local Restoration" : "Локальное восстановление"}</Link>
+                >{params.lang == "en" ? "Local restoration" : "Локальная реставрация"}</Link>
             </div>
             <div className="nav-contacts">
                 <Link
