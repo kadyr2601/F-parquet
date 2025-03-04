@@ -101,7 +101,7 @@ function Header() {
                 <div className={'contacts-btn'} ref={overlayRef}>
                     <div className={`open ${open ? "open-active" : ""}`}>
                         <div className="contacts">
-                            <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>
+                            <Link href="tel:+971565083179">+ 971 56 508 31 49</Link>
                             <Link href="tel:+971567140101">+ 971 56 714 01 01</Link>
                             <Link href="mailto:info@fixworks-team.com">info@fixworks-team.com</Link>
                         </div>
@@ -121,7 +121,7 @@ function Header() {
                     <div className={'contacts-btn'} ref={overlayRef}>
                         <div className={`open ${open ? "open-active" : ""}`}>
                             <div className="contacts">
-                                <Link href="tel:+971565083179">+ 971 56 508 31 79</Link>
+                                <Link href="tel:+971565083179">+ 971 56 508 31 49</Link>
                                 <Link href="tel:+971567140101">+ 971 56 714 01 01</Link>
                                 <Link href="mailto:info@fixworks-team.com">info@fixworks-team.com</Link>
                             </div>

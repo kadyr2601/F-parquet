@@ -20,7 +20,7 @@ const Contacts = () => {
                         </div>
                         <div className="column">
                             <h1>Contacts numbers</h1>
-                            <span>+ 971 56 508 31 79</span>
+                            <span>+ 971 56 508 31 49</span>
                             <span>+ 971 56 714  01 01</span>
                         </div>
                     </div>
